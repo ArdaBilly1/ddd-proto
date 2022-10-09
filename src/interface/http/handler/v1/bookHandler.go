@@ -36,6 +36,15 @@ func (h bookHandler) Create(c echo.Context) error {
 		)
 	}
 
+	if err := h.service.CreateNew(*req); err != nil {
+		return utilities.SetResponse(
+			c,
+			http.StatusBadRequest,
+			utilities.MsgErrorFailedInsert,
+			err,
+		)
+	}
+
 	return utilities.SetResponse(
 		c,
 		http.StatusCreated,

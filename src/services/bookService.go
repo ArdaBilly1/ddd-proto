@@ -11,6 +11,7 @@ type bookService struct {
 }
 
 type BookServiceContract interface {
+	CreateNew(req request.RequestBookCreate) error
 }
 
 func NewBookService(repo repository.BookRepositoryContract) BookServiceContract {
