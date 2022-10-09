@@ -3,11 +3,12 @@ package main
 import (
 	"context"
 	"ddd-proto/config"
-	"ddd-proto/src/interface/routes"
+	"ddd-proto/src/interface/http/routes"
 	"os"
 	"os/signal"
 	"time"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -21,7 +22,7 @@ func main() {
 	e := echo.New()
 	e.Pre(middleware.RemoveTrailingSlash())
 	e.Use(middleware.Logger())
-	// e.Validator = &config.Validator{Validator: validator.New()}
+	e.Validator = &config.Validator{Validator: validator.New()}
 
 	routes.V1(e)
 
