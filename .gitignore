@@ -3,3 +3,4 @@ config.json
 
 # air development on local 
 air.toml
+tmp/*
