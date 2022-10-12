@@ -1,8 +1,8 @@
 package v1
 
 import (
+	"ddd-proto/src/domain/model/book"
 	utilities "ddd-proto/src/infrastructure/utilitIes"
-	"ddd-proto/src/interface/http/handler/v1/request"
 	"ddd-proto/src/services"
 	"net/http"
 
@@ -22,7 +22,7 @@ func NewBookHandler(svc services.BookServiceContract) BookHandlerContract {
 }
 
 func (h bookHandler) Create(c echo.Context) error {
-	req := new(request.RequestBookCreate)
+	req := new(book.RequestBookCreate)
 	if err := c.Bind(&req); err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}

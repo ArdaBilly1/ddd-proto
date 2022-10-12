@@ -1,4 +1,4 @@
-package request
+package book
 
 type RequestBookCreate struct {
 	Name string `json:"name" validate:"required"`
