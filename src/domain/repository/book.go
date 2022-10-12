@@ -1,6 +1,6 @@
 package repository
 
-import "ddd-proto/src/domain/model"
+import model "ddd-proto/src/domain/model/book"
 
 type BookRepositoryContract interface {
 	Create(book model.Book) error
