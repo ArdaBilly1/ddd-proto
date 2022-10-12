@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"ddd-proto/src/domain/model"
+	model "ddd-proto/src/domain/model/book"
 	"ddd-proto/src/domain/repository"
 	"time"
 
